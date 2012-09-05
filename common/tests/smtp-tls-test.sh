@@ -18,6 +18,12 @@ set body "[lindex $argv 5]"
 set userPlain "[lindex $argv 6]"
 set passwordPlain "[lindex $argv 7]"
 
+if { $host == "" || $port == "" || $from == "" || $to == "" || $subject == "" || $body == "" || $userPlain == "" || $passwordPlain == ""}  {
+  puts "Usage: <host> <port> <from> <to> <subject> <body> <userPlain> <passwordPlain> \n"
+  exit 1
+}
+
+
 #send "echo -n \"$userPlain\" | openssl enc -base64"
 #expect -re "(.*)"
 #set user $expect_out(1, string)

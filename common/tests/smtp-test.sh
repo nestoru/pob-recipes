@@ -10,6 +10,10 @@ set to "[lindex $argv 3]"
 set subject "[lindex $argv 4]"
 set body "[lindex $argv 5]"
 
+if { $host == "" || $port == "" || $from == "" || $to == "" || $subject == "" || $body == "" }  {
+  puts "Usage: <host> <port> <from> <to> <subject> <body> \n"
+  exit 1
+}
 
 set timeout 10
 spawn telnet $host $port
