@@ -25,4 +25,5 @@ do
   fi
 done
 echo Running $runInTabsCommand
-`$runInTabsCommand`
+eval $runInTabsCommand
+
