@@ -35,5 +35,5 @@ gmake
 gmake install
 /usr/local/bin/monit quit
 /usr/local/bin/monit
-/usr/local/bin/monit status
+/usr/local/bin/monit -V 
 
