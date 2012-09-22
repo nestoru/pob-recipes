@@ -5,7 +5,7 @@
 
 USAGE="Usage: `basename $0` <monitVersion> <sha256>"
 
-if [ $# -ne "1" ] 
+if [ $# -ne "2" ] 
 then
   echo $USAGE
   exit 1 
@@ -24,4 +24,5 @@ cd monit-${monitVersion}
 make
 make install
 monit quit
-monit
+service monit restart
+monit -V
