@@ -1,5 +1,5 @@
 #!/bin/bash -e
-# name: reinstall-monit.sh
+# name: reinstall-monit-ubuntu-x86_64.sh
 # date: 20120919
 # author: Nestor Urquiza
 
@@ -20,7 +20,7 @@ wget http://mmonit.com/monit/dist/monit-${monitVersion}.tar.gz
 openssl dgst -sha256 monit-${monitVersion}.tar.gz | grep " $sha256" ||  exit 1
 tar xvfz monit-${monitVersion}.tar.gz 
 cd monit-${monitVersion}
-./configure --prefix=/usr/sbin --bindir=/usr/sbin --sysconfdir=/etc/monit/
+./configure --prefix=/usr/bin --bindir=/usr/bin --sysconfdir=/etc/monit/ --with-ssl-lib-dir=/usr/lib/x86_64-linux-gnu
 make
 make install
 monit quit
