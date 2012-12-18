@@ -19,7 +19,6 @@ then
   exit 1 
 fi
 
-: << '--COMMENT--'
 mkdir -p "$localDirectory"
 common/umount-path.sh "$localDirectory"
 common/mount-cifs.sh "$cifsDirectory" "$localDirectory" $CREDENTIALS_PATH $windowsDomain $linuxUser $linuxGroup
@@ -28,7 +27,4 @@ cp "$localDirectory/$distributionFileName" /opt/
 cd /opt/
 gzip -cd $distributionFileName | tar xfv -
 chown -R $linuxUser:$linuxUser /opt/eclipse/
-A comment here
-Now it is a multiline comment
---COMMENT--
 common/gnome-application-launcher.sh Eclipse /opt/eclipse/eclipse /opt/eclipse/icon.xpm
