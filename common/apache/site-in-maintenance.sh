@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -ex
 # common/apache/site-in-maintenance.sh
 
 USAGE="Usage: `basename $0` <virtualHostFilePath> <isInMaintenance>"
@@ -16,6 +16,6 @@ if $isInMaintenance
 then
   sed -i "s/#Rewrite/Rewrite/g" $virtualHostFilePath
 else
-  sed -i "s/[^#]Rewrite/#Rewrite/g" $virtualHostFilePath
+  sed -i "s/[^#]*Rewrite/#Rewrite/g" $virtualHostFilePath
 fi
 apachectl graceful
