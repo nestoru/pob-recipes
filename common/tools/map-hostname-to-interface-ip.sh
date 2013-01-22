@@ -17,5 +17,5 @@ fi
 hostname=$1
 interface=$2
 
-ip=`hostname -i`
+ip=`/sbin/ifconfig $interface | grep 'inet addr:' | awk -F ' *|:' '/inet addr/{print $4}'`
 sed -i "/$hostname/d" /etc/hosts && bash -c "echo '$ip $hostname' >> /etc/hosts"
