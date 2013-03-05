@@ -1,4 +1,4 @@
-#!/usr/bin/env gawk -f
+#!/usr/bin/gawk -f
 #FUNCTIONS
 function printRecords(array, isLastArray) {
   if( array[0] != "" ) {
