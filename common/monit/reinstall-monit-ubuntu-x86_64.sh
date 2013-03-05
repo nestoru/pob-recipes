@@ -1,7 +1,5 @@
 #!/bin/bash -e
-# name: reinstall-monit-ubuntu-x86_64.sh
-# date: 20120919
-# author: Nestor Urquiza
+#common/monit/reinstall-monit-ubuntu-x86_64.sh
 
 USAGE="Usage: `basename $0` <monitVersion> <sha256>"
 
@@ -23,6 +21,4 @@ cd monit-${monitVersion}
 ./configure --prefix=/usr/bin --bindir=/usr/bin --sysconfdir=/etc/monit/ --with-ssl-lib-dir=/usr/lib/x86_64-linux-gnu
 make
 make install
-monit quit
-service monit restart
-monit -V
+

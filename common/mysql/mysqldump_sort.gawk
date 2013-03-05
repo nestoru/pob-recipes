@@ -1,4 +1,4 @@
-#!/usr/local/bin/gawk -f
+#!/usr/bin/env gawk -f
 #FUNCTIONS
 function printRecords(array, isLastArray) {
   if( array[0] != "" ) {
@@ -6,7 +6,7 @@ function printRecords(array, isLastArray) {
     arrayLength = length(array);
     for( j = 1; j < arrayLength + 1; j++ ) {
       #remove last comma and extra characters like spaces and tabs
-      sub(/,.*$/, "", array[j]);
+      sub(/^(.*),[:space:]*$/, "\\1\\2", array[j]);
       #add the comma unless isLastArray and isLastRecord
       if( !(j == arrayLength && isLastArray == 1) ){
         array[j] = array[j] ","
