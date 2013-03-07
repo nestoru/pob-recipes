@@ -1,9 +1,9 @@
-#!/usr/bin/gawk -f
+#!/usr/bin/env gawk -f
 #FUNCTIONS
 function printRecords(array, isLastArray) {
   if( array[0] != "" ) {
-    asort(array);
-    arrayLength = length(array);
+    arrayLength = asort(array);
+    #arrayLength = length(array);
     for( j = 1; j < arrayLength + 1; j++ ) {
       #remove last comma and extra characters like spaces and tabs
       array[j] =  gensub(/^(.*),[:space:]*$/, "\\1", "g", array[j]);
