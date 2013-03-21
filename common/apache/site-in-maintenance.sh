@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -e
 # common/apache/site-in-maintenance.sh
 
 USAGE="Usage: `basename $0` <virtualHostFilePath> <isInMaintenance>"

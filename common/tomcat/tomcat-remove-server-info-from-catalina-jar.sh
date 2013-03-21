@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -e
 # common/tomcat/tomcat-remove-server-info-from-catalina-jar.sh
 # This takes care of just catalina.jar. Changes in server.xml 8080 and 8009 connectors are also needed but for those you should be OK maintaining the config files on svn and deploy them from another recipe
 USAGE="Usage: `basename $0` <catalinaHome>"

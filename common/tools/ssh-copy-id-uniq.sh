@@ -1,5 +1,5 @@
-#!/bin/bash -e
-# ssh-copy-id-uniq.sh
+#!/bin/bash -ex
+# common/tools/ssh-copy-id-uniq.sh
 
 localUser=$1
 remoteUser=$2
@@ -18,5 +18,5 @@ then
 fi
 
 su $localUser -c "ssh-copy-id -i $publicKey $remoteUser@$remoteHost"
-ssh -i $privateKey $remoteUser@$remoteHost "sed -i \"\\\$!{/$user@$LOCAL_HOST_NAME/d;}\" ~/.ssh/authorized_keys"
+ssh -i $privateKey $remoteUser@$remoteHost "sed -i \"\\\$!{/$localUser@$LOCAL_HOST_NAME/d;}\" ~/.ssh/authorized_keys"
 
