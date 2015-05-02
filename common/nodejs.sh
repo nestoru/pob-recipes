@@ -1,6 +1,5 @@
 #!/bin/bash -e
 # common/nodejs.sh
-common/tools/print-execution-info.sh $0 "$*"
 
 USAGE="Usage: `basename $0` <version>"
 
