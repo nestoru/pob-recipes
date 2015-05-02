@@ -26,9 +26,11 @@ tar -zxvf $distroFileName
 rm -f /usr/local/bin/node
 rm -f /usr/bin/node
 ln -s /opt/$distroName/bin/node /usr/bin/node
+ln -s /opt/$distroName/bin/node /usr/local/bin/node
 rm -f /usr/local/bin/npm
 rm -f /usr/bin/npm
 ln -s /opt/$distroName/bin/npm /usr/bin/npm
+ln -s /opt/$distroName/bin/npm /usr/local/bin/npm
 node --version
 mkdir -p /opt/nodejs
 rm $distroFileName
