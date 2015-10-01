@@ -15,6 +15,8 @@ os=`uname`
 
 if [[ "$os" =~ "Darwin" ]]; then
   distroName=node-v${version}-darwin-x64
+elif [[ "$os" =~ "SunOS" ]]; then
+  distroName=node-v${version}-sunos-x64  
 else
   distroName=node-v${version}-linux-x64
 fi
@@ -34,3 +36,4 @@ ln -s /opt/$distroName/bin/npm /usr/local/bin/npm
 node --version
 mkdir -p /opt/nodejs
 rm $distroFileName
+root@genevadev:/tm
