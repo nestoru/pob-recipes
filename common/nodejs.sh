@@ -13,10 +13,9 @@ version=$1
 user=`logname`
 os=`uname`
 
+# Only OSX and linux. Solaris binaries are not officially packaged. Open solaris is though.
 if [[ "$os" =~ "Darwin" ]]; then
   distroName=node-v${version}-darwin-x64
-elif [[ "$os" =~ "SunOS" ]]; then
-  distroName=node-v${version}-sunos-x64  
 else
   distroName=node-v${version}-linux-x64
 fi
