@@ -35,4 +35,3 @@ ln -s /opt/$distroName/bin/npm /usr/local/bin/npm
 node --version
 mkdir -p /opt/nodejs
 rm $distroFileName
-root@genevadev:/tm
