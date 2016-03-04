@@ -1,5 +1,5 @@
 #!/bin/bash -e
-# common/packages/mod-security-install.sh
+# common/apache/mod-security-install.sh
 
 # install
 apt-get update -y
