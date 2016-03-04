@@ -15,6 +15,8 @@ cp /usr/share/modsecurity-crs/modsecurity_crs_10_setup.conf /etc/modsecurity/
 cp /usr/share/modsecurity-crs/base_rules/modsecurity_crs_41_sql_injection_attacks.conf /etc/modsecurity/
 cp /usr/share/modsecurity-crs/base_rules/modsecurity_crs_40_generic_attacks.conf /etc/modsecurity/
 cp /usr/share/modsecurity-crs/base_rules/modsecurity_40_generic_attacks.data /etc/modsecurity/
+# if using UUID you better get the latest sql rules
+curl -o /etc/modsecurity/modsecurity_crs_41_sql_injection_attacks.conf https://raw.githubusercontent.com/SpiderLabs/owasp-modsecurity-crs/master/base_rules/modsecurity_crs_41_sql_injection_attacks.conf
 # enable protection and avoid logging just because a status code != 200
 sed -i  's/^SecRuleEngine.*/SecRuleEngine On/' /etc/modsecurity/modsecurity.conf
 sed -i  's/^SecAuditLogRelevantStatus.*/SecAuditLogRelevantStatus \"\^\$\"/' /etc/modsecurity/modsecurity.conf
