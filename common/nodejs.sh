@@ -10,7 +10,7 @@ then
 fi
 
 version=$1
-user=`logname`
+user=$USER
 os=`uname`
 
 rm -f /usr/local/bin/node
