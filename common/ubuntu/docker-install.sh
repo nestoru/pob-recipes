@@ -10,7 +10,7 @@ newgrp docker
 service docker restart
 major=$(cat /etc/lsb-release | grep DISTRIB_RELEASE | sed -E 's/^[^0-9]*([0-9]*)\..*$/\1/g') 
 if [[ "$major" -ge "15" ]]; then
-  journalctl -u docker -n100
+  journalctl -u docker -n100 --no-pager
 else
   tail -100 /var/log/upstart/docker.log
 fi
