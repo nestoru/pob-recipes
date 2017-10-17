@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -e
 # podlogs.sh
 # @description Tails all kubernetes logs for a given context (kubectl config view ).  
 # @author Nestor Urquiza
