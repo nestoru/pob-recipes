@@ -3,6 +3,13 @@
 # @description Tails all kubernetes logs for a given context (kubectl config view ).  
 # @author Nestor Urquiza
 # @date 20171016
+#
+# @example1 For my-project, in my-cluster, in pods named '*nodejs*', tail the application internal log for today
+# ./podlogs.sh -c gke_my-project_us-east1-b_my-cluster -r nodejs -l /var/log/my-app.log.2017-10-17
+#
+# @example1 For my-project, in my-cluster, in pods named '*nodejs*', tail the pod log (as in kubectl logs pod)
+# ./podlogs.sh -c gke_my-project_us-east1-b_my-cluster -r nodejs
+
 
 # options
 while [[ $# -gt 1 ]]; do
