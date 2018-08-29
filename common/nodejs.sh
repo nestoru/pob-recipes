@@ -24,14 +24,16 @@ else
   distroName=node-v${version}-linux-x64
 fi
 
-rm -fr /opt/node-*
+optDir=/usr/local/.opt
+mkdir -p $optDir
+rm -fr $optDir/node-*
 distroFileName=${distroName}.tar.gz
-cd /opt
+cd $optDir 
 curl -O http://nodejs.org/dist/v${version}/$distroFileName
 tar -zxvf $distroFileName
 mkdir -p /usr/local/bin/
-ln -s /opt/$distroName/bin/node /usr/local/bin/node
-ln -s /opt/$distroName/bin/npm /usr/local/bin/npm
+ln -s $optDir/$distroName/bin/node /usr/local/bin/node
+ln -s $optDir/$distroName/bin/npm /usr/local/bin/npm
 rm -fr /usr/local/lib/node_modules
 rm $distroFileName
 npm config set prefix /usr/local
