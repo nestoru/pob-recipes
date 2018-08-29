@@ -1,16 +1,16 @@
 #!/bin/bash -e
 # common/nodejs.sh
 
-USAGE="Usage: `basename $0` <version>"
+USAGE="Usage: `basename $0` <version> <user>"
 
-if [ $# -ne "1" ] 
+if [ $# -ne "2" ] 
 then
   echo $USAGE
   exit 1 
 fi
 
 version=$1
-user=$USER
+user=$2
 os=`uname`
 
 rm -f /usr/local/bin/node
@@ -25,8 +25,8 @@ else
 fi
 
 optDir=/usr/local/.opt
+rm -fr $optDir
 mkdir -p $optDir
-rm -fr $optDir/node-*
 distroFileName=${distroName}.tar.gz
 cd $optDir 
 curl -O http://nodejs.org/dist/v${version}/$distroFileName
@@ -36,5 +36,5 @@ ln -s $optDir/$distroName/bin/node /usr/local/bin/node
 ln -s $optDir/$distroName/bin/npm /usr/local/bin/npm
 rm -fr /usr/local/lib/node_modules
 rm $distroFileName
-npm config set prefix /usr/local
+chown -R $user $optDir/
 node --version
