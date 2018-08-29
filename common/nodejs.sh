@@ -36,5 +36,6 @@ ln -s $optDir/$distroName/bin/node /usr/local/bin/node
 ln -s $optDir/$distroName/bin/npm /usr/local/bin/npm
 rm -fr /usr/local/lib/node_modules
 rm $distroFileName
+npm config set prefix /usr/local
 chown -R $user $optDir/
 node --version
