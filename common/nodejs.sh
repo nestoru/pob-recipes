@@ -40,4 +40,5 @@ npm config set prefix /usr/local
 chown -R $user /usr/local/bin
 chown -R $user /usr/local/lib
 chown -R $user $optDir/
+chown -R $user ~/
 node --version
