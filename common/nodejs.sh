@@ -29,7 +29,7 @@ rm -fr $optDir
 mkdir -p $optDir
 distroFileName=${distroName}.tar.gz
 cd $optDir 
-curl -O http://nodejs.org/dist/v${version}/$distroFileName
+curl -OL https://nodejs.org/dist/v${version}/$distroFileName
 tar -zxvf $distroFileName
 mkdir -p /usr/local/bin/
 ln -s $optDir/$distroName/bin/node /usr/local/bin/node
