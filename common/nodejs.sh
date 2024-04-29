@@ -17,6 +17,7 @@ rm -f /usr/local/bin/node
 rm -f /usr/bin/node
 rm -f /usr/local/bin/npm
 rm -f /usr/bin/npm
+rm -f /usr/bin/npx
 
 if [[ "$os" =~ "Darwin" ]]; then
   distroName=node-v${version}-darwin-x64
@@ -34,6 +35,7 @@ tar -zxvf $distroFileName
 mkdir -p /usr/local/bin/
 ln -s $optDir/$distroName/bin/node /usr/local/bin/node
 ln -s $optDir/$distroName/bin/npm /usr/local/bin/npm
+ln -s $optDir/$distroName/bin/npx /usr/local/bin/npx
 rm -fr /usr/local/lib/node_modules
 rm $distroFileName
 npm config set prefix /usr/local
